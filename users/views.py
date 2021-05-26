@@ -1,5 +1,3 @@
-from api.permissions import AdminPermission
-from api_yamdb import settings
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 from rest_framework import filters, status, viewsets
@@ -8,6 +6,9 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
+
+from api.permissions import AdminPermission
+from api_yamdb import settings
 
 from .models import User
 from .serializers import CodeSerializer, EmailSerializer, UserSerializer

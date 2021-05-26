@@ -50,7 +50,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
-            sudo docker <имя-пользователя>/<имя-репозитория>
+            sudo docker whiteheron819/yamdb_final
             sudo docker-compose stop
             sudo docker-compose rm web
             # Создаст файл для переменных окружения

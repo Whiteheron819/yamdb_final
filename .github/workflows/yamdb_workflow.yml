@@ -44,10 +44,10 @@ jobs:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.VIRT_HOST }}
-          username: ${{ secrets.USER_TO_VIRT_HOST }}
-          key: ${{ secrets.SSH_KEY_TO_VIRT_HOST }}
-          passphrase: ${{ secrets.PASSPHRASE_FOR_SSH }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
           # stack_file_name: docker-compose.yaml
           script: |
             sudo docker pull ${{ secrets.DOCKER_USERNAME}}/yamdb_final

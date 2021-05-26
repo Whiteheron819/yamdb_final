@@ -40,7 +40,7 @@ class AdminProfileViewSet(viewsets.ModelViewSet):
             serializer.is_valid(raise_exception=True)
             serializer.save()
             return Response(serializer.data)
-        return
+        return Response(serializer.data)
 
 
 @api_view(['POST'])

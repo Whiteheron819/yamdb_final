@@ -52,7 +52,7 @@ jobs:
           script: |
             sudo docker whiteheron819/yamdb_final
             sudo docker-compose stop
-            sudo image prune -af
+            sudo docker image prune -af
             touch .env 
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env

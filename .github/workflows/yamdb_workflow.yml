@@ -51,8 +51,11 @@ jobs:
           stack_file_name: docker-compose.yaml
           script: |
             sudo docker whiteheron819/yamdb_final
-            sudo docker-compose stop
-            sudo docker-compose rm web
+            sudo docker-compose stop web
+            sudo docker-compose stop nginx
+            sudo docker-compose rm -f web
+            sudo docker rmi admiin/yamdb_final:latest
+            sudo rm docker-compose.yaml
             touch .env 
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
